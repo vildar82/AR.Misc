@@ -42,6 +42,9 @@
       <HintPath>..\..\..\ObjectARX\ObjectARX2015\inc\AcMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="AutoCAD_PIK_Manager">
+      <HintPath>..\..\..\AutoCAD_PIK_Manager\AutoCAD_PIK_Manager\bin\Release\AutoCAD_PIK_Manager.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -64,7 +67,7 @@
     </Compile>
     <Compile Include="Model\Errors\Inspector.cs" />
     <Compile Include="Model\Lib\Zoom.cs" />
-    <Compile Include="Model\RenameBlockApartFromRevit.cs" />
+    <Compile Include="Model\PrepareJobMountingForConstructor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

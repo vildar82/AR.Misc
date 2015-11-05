@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoCAD_PIK_Manager;
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.Runtime;
 
@@ -12,9 +13,9 @@ namespace AR.Misc
 {
    public class Commands
    {
-      // Переименование блоков с именами вида - DET_АРКВ_14т - DET_АРКВ_14т-10723881-S_01, в АРКВ_14т
-      [CommandMethod("PIK", "AR-RenameBlocksApartFromRevit", CommandFlags.Modal)]// | CommandFlags.NoBlockEditor)]
-      public void RenameBlocksApartFromRevitCommand()
+      // Подготовка задания конструкторам для создания монтажек
+      [CommandMethod("PIK", "AR-PrepareJobMountingForConstructor", CommandFlags.Modal)]// | CommandFlags.NoBlockEditor)]
+      public void PrepareJobMountingForConstructorCommand()
       {
          Document doc = Application.DocumentManager.MdiActiveDocument;
          if (doc == null) return;
@@ -22,13 +23,14 @@ namespace AR.Misc
          {
             using (var lockDoc = doc.LockDocument())
             {
-               Model.RenameBlockApartFromRevit renamer = new Model.RenameBlockApartFromRevit();
-               renamer.Rename();
+               Model.PrepareJobMountingForConstructor renamer = new Model.PrepareJobMountingForConstructor();
+               renamer.Prepare();               
             }
          }
          catch (System.Exception ex)
          {
             doc.Editor.WriteMessage("\n{0}", ex.ToString());
+            Log.Error(ex, "команда AR-PrepareJobMountingForConstructor");
          }
       }
    }
