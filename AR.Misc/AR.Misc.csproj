@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AR.Misc</RootNamespace>
     <AssemblyName>AR.Misc</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,8 +43,9 @@
       <HintPath>..\..\..\ObjectARX\ObjectARX2015\inc\AcMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AutoCAD_PIK_Manager">
-      <HintPath>..\..\..\AutoCAD_PIK_Manager\AutoCAD_PIK_Manager\bin\Release\AutoCAD_PIK_Manager.dll</HintPath>
+    <Reference Include="AutoCAD_PIK_Settings">
+      <HintPath>..\..\..\..\Autodesk\AutoCAD\Pik\Settings\Dll\AutoCAD_PIK_Settings.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
